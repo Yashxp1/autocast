@@ -1,11 +1,17 @@
 import React from 'react';
+import { signIn } from '@/auth';
 import { Button } from './ui/button';
 
 const GoogleBtn = () => {
   return (
-    <div>
-      <Button>Google Login</Button>
-    </div>
+    <form
+      action={async () => {
+        'use server';
+        await signIn('google');
+      }}
+    >
+      <Button type="submit">Signin with Google</Button>
+    </form>
   );
 };
 
