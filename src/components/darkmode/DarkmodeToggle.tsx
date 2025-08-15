@@ -9,11 +9,7 @@ export function DarkmodeToggle() {
   const { theme, setTheme } = useTheme();
 
   const handleTheme = () => {
-    if (theme === 'dark') {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (
